@@ -9,3 +9,5 @@ export default async function HomePage(){
 
   return <PageComponent {...result} />
   }
+
+  

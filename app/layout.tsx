@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "TinaCMS Blog",
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body >
-        <div className="prose-xl mx-auto my-20 w-full max-w-4xl px-4 dark:prose-invert md:px-0">
+        <div className="prose-xl mx-auto w-full max-w-4xl px-4 dark:prose-invert 
+        md:px-0">
+          <Header />
           <main>{children}</main>
         </div>
       </body>
