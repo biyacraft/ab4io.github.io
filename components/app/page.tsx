@@ -10,7 +10,7 @@ export function PageComponent(props:{
         relativePath:string
     }
     query:string
-}){
+})  {
     const {data} = useTina(props)
 
     const title = data?.page?.title
