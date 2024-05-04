@@ -107,9 +107,9 @@ export default defineConfig({
                 )
             },
           },
-          
         },
       },
     ],
   },
-});
+}
+)

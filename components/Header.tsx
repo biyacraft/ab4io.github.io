@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
+import { RxChatBubble, RxDividerVertical, RxHome, RxPerson } from "react-icons/rx";
+import { RiGithubFill, RiTwitterFill, RiYoutubeFill } from "react-icons/ri";
 
 export default function Header(){
 
@@ -7,9 +10,33 @@ export default function Header(){
         content-center items center justify-between 
         font-sans text-base">
             <div className="flex gap-4">
-                <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-                <Link href="/posts">Blog</Link>
+                <Link href="/" className="max-sm:hidden">Home</Link>
+                <Link href="/" className="sm:hidden">
+                    <RxHome />
+                </Link>
+                
+                <Link href="/posts" className="max-sm:hidden">Blog</Link>
+                <Link href="/posts" className="sm:hidden">
+                    <RxChatBubble />
+                </Link>
+                <Link href="/about" className="max-sm:hidden">About</Link>
+                <Link href="/about" className="sm:hidden">
+                    <RxPerson />
+                </Link>
+            </div>
+            <div className="flex justfy-between gap-4">
+                <Link href='https://youtube.com/abiitea'>
+                    <RiYoutubeFill />
+                </Link>
+                <Link href='https://x.com/abiitea'>
+                    <RiTwitterFill />
+                </Link>
+                <Link href='https://github.com/abiitea'>
+                    <RiGithubFill />
+                </Link>
+                <RxDividerVertical className="text-gray-300 dark:text-gray-600"/>
+                
+                <ThemeToggle />
             </div>
         </header>
     )
