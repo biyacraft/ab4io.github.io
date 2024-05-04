@@ -1,3 +1,4 @@
+import { title } from "process";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -56,6 +57,56 @@ export default defineConfig({
             }
             return undefined
           }
+          
+        },
+      },
+      {
+        name: "post",
+        label: "posts",
+        path: "content/post",
+        format: "mdx",
+        fields: [
+          {
+            name: "title",
+            type: "string",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "date",
+            type: "datetime",
+            label: "Date",
+            required: true,
+          },
+          {
+            name: "body",
+            type: "rich-text",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+        defaultItem:()=>{
+          return{
+            title:"New Post",
+            date:new Date()
+        }
+        },
+        ui: {
+          // This is an DEMO router. You can remove this to fit your site
+          router: ({ document }) => {
+            return `/posts/${document._sys.filename}`
+          },
+          filename: {
+            slugify: (values) =>{
+              return `${(values.title || "").
+                toLowerCase().replace(/ /g, "-")}`.
+                replace(
+                  /[^\w\.\/-\s]/gi,
+                  "",
+                )
+            },
+          },
           
         },
       },
