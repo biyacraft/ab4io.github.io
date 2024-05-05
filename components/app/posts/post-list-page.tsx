@@ -29,7 +29,7 @@ export function PostListPageComponent(props: {
     })
 
 
-    const tags= data?.postConnection.edges?.reduce((acc:any,post:any)=>{
+    const tags= data?.postConnection?.edges?.reduce((acc:any,post:any)=>{
         if(post.node.tags){
             post.node.tags.forEach((tag:any)=>{
                 if(acc[tag]){
@@ -43,7 +43,8 @@ export function PostListPageComponent(props: {
         
         return acc
     }, {})
-    console.log(tags)
+
+
 
 
     return(
@@ -61,9 +62,7 @@ export function PostListPageComponent(props: {
                     <ul>
                         {Object.keys(tags).map((tag: any)=>(
                             <li className="my-3" key={tag}>
-
-                                <Link className={`px-3 py-2 text-sm font-medium uppercase ${
-                                    props.tag === tag ? "pointer-events-none text-emerald-600 dark:text-emerald-400" :
+                                <Link className={`px-3 py-2 text-sm font-medium uppercase ${ props.tag === tag ? "pointer-events-none text-emerald-600 dark:text-emerald-400" :
                                     "text-primary hover:text-emerald-500 dark:text-zinc-300 dark:hover:text-emerald-500"
                                 }`}
                                 aria-label={`View posts tagged ${tag}`}
@@ -71,7 +70,8 @@ export function PostListPageComponent(props: {
                                     {tag} ({tags[tag]})
                                 </Link>
                             </li>
-                        ))}
+                        )).sort((a: any, b:any) => a.key.localeCompare(b.key))
+                        }
                     </ul>
                 </div>
             </div>
@@ -87,7 +87,20 @@ export function PostListPageComponent(props: {
                     <Link href={`/posts/${post.node._sys.filename}`}>
                         {post.node.title}
                     </Link>
+                    {post.node.tags && (
+                       
+                       <div className="flex flex-wrap gap-2 font-sans text-sm  uppercase text-emerald-600 dark:text-emerald-400">
+                       {post.node.tags.map((tag:any) =>(
+                        <Link href={`/posts/tags/${tag}`} className="underline-offset-2 hover:underline" 
+                        key={tag}> 
+                        {tag}
+                        </Link>
+                        ))}
+                       
+                       </div>
+                    )}
                 </li>
+                
             ))}
             </ul>
         </div>
