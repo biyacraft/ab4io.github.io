@@ -1,6 +1,6 @@
 ---
 title: Fetagn Food
-description: A Food delivery System
+description: A Fast Food delivery Platform
 link: fetagnfood.vercel.app
 ---
 
