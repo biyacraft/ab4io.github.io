@@ -1,0 +1,22 @@
+query homePage($filter: PostFilter)
+{
+    page(relativePath: "home.mdx"){
+        ...PageParts
+    }
+
+
+    postConnection(sort: "date", filter: $filter, last: 5) {
+
+        edges{
+            node {
+                title
+                date
+                id
+                _sys {
+                    filename
+                }
+            }
+        }
+
+    }
+}

@@ -7,7 +7,6 @@ import { useTina } from "tinacms/dist/react"
 export function PostListPageComponent(props: {
     data:PostConnectionQuery
     variables: { 
-        
     }
     query:string
     })  {
