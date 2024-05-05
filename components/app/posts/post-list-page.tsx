@@ -56,11 +56,12 @@ export function PostListPageComponent(props: {
                 <div className="px-6 py-4">
                  <a className={`uppercase ${
                     props.tag === undefined ? "pointer-events-none text-emerald-600 dark:text-emerald-500": 
-                    ""}`} href="/posts">
+                    "text-zinc-700 hover:text-emerald-500 dark:text-zinc-300 dark:hover:text-emerald-500"}`} 
+                    href="/posts"
+                    >
                     All Posts
                     </a>
-                    <ul>
-                        {Object.keys(tags).map((tag: any)=>(
+                    <ul> {Object.keys(tags).map((tag: any)=>(
                             <li className="my-3" key={tag}>
                                 <Link className={`px-3 py-2 text-sm font-medium uppercase ${ props.tag === tag ? "pointer-events-none text-emerald-600 dark:text-emerald-400" :
                                     "text-primary hover:text-emerald-500 dark:text-zinc-300 dark:hover:text-emerald-500"
@@ -103,7 +104,7 @@ export function PostListPageComponent(props: {
                 
             ))}
             </ul>
-        </div>
+         </div>
            
         </div>
     </>
