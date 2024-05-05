@@ -1,6 +1,6 @@
 ---
 title: Portfolio
 description: A personal blogging and portfolio showcase website
-link: ab4io.vercel.app
+link: 'https://ab4io.vercel.app/'
 ---
 
