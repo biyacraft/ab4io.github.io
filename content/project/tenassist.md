@@ -1,6 +1,6 @@
 ---
 title: Tenassist
 description: Healthcare Aid app
-link: github.com
+link: 'https://github.com/ab4io/Tenassist'
 ---
 
