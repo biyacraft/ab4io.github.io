@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
-  title: "TinaCMS Blog",
+  title: "ab4io",
   description: "My dev blog :)",
 };
 

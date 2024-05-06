@@ -29,13 +29,13 @@ export default function Header(){
                 </Link>
             </div>
             <div className="flex justfy-between gap-4">
-                <Link href='https://youtube.com/abiitea'>
+                <Link href='https://youtu.be/3nwR4wWYP-c'>
                     <RiYoutubeFill />
                 </Link>
-                <Link href='https://x.com/abiitea'>
+                <Link href='https://x.com/abi4io'>
                     <RiTwitterFill />
                 </Link>
-                <Link href='https://github.com/abiitea'>
+                <Link href='https://github.com/ab4io'>
                     <RiGithubFill />
                 </Link>
                 <RxDividerVertical className="text-gray-300 dark:text-gray-600"/>

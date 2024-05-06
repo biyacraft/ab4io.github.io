@@ -8,7 +8,7 @@ export default function Footer(){
             <hr />
             <p>
                 The{" "}<Link
-                href="https://abi6/io"
+                href="#"
                 target="_blank"
                 className="underline-offset-2 hover:text-emerald-500 hover:underline">
                     ab4i40

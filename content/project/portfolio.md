@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-description: A personal blogging and portfolio showcase website
+description: 'And I built this site with Tailwnd, Nextjs, TinaCMS and shadcn.'
 link: 'https://ab4io.vercel.app/'
 ---
 
