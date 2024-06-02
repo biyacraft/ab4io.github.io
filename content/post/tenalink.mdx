@@ -33,11 +33,36 @@ In this blog post, I want to focus on the recommendation algorithm that we used 
 
 ## **3. Recommendation Algorithm**
 
-* The Dataset
-  The dataset is made up of training and testing files that contain 4,920 rows and 133 columns. We'll use this data to predict various diseases.
+## **The Dataset**
+
+ The dataset is made up of training and testing files that contain 4,920 rows and 133 columns. We'll use this data to predict various diseases.
 
 The columns represent the symptoms used to make these predictions.
 
 The Label for prediction consists of 41 diseases for different symptoms variations in the dataset. The 41 diseases are listed as follows:
 
 Vertigo, AIDS, Acne, Alcoholic hepatitis, Allergy, Arthritis, Bronchial Asthma, Cervical spondylosis, Chicken pox, Chronic cholestasis, Common Cold, Dengue, Diabetes, Dimorphic hemorrhoids(piles), Drug Reaction, Fungal infection, GERD, Gastroenteritis, Heart attack, Hepatitis B, Hepatitis C, Hepatitis D, Hepatitis E, Hypertension, Hyperthyroidism, Hypoglycemia, Hypothyroidism, Impetigo, Jaundice, Malaria, Migraine, Osteoarthritis, Paralysis (brain hemorrhage), Peptic ulcer disease, Pneumonia, Psoriasis, Tuberculosis, Typhoid, Urinary tract infection, Varicose veins, Hepatitis A.
+
+Support Vector Classifier (SVC):
+
+SVC is a powerful machine learning algorithm that is particularly well-suited for classification tasks. It works by finding the optimal hyperplane that separates the different classes in the data. SVC is known for its ability to handle both linear and non-linear decision boundaries, making it a versatile choice for a wide range of classification problems. Additionally, SVC has built-in mechanisms to prevent overfitting, which can be crucial when working with high-dimensional datasets. The algorithm's flexibility in kernel selection allows you to tailor the model to the specific characteristics of your data, further enhancing its performance.
+
+## Algorthims
+
+#### **Gradient Boosting Classifier:**
+
+Gradient Boosting is an ensemble learning method that combines multiple "weak" models, such as decision trees, to create a strong and accurate classifier. The algorithm works by iteratively improving the weak models, focusing on the mistakes made by the previous models. Gradient Boosting is often very effective at tackling complex classification problems, as it can capture intricate relationships in the data. It is a versatile algorithm that can handle a wide range of data types and is particularly useful for large and high-dimensional datasets.
+
+#### **K-Neighbors Classifier (Multinomial Naive Bayes):**
+
+K-Neighbors Classifier is a simple and intuitive algorithm that makes predictions based on the "nearest neighbors" in the training data. It is a good choice for smaller datasets and can handle both numerical and categorical features. Multinomial Naive Bayes, on the other hand, is a variant of the Naive Bayes classifier that is particularly useful for text classification tasks. These algorithms are generally less complex than SVC or Gradient Boosting, making them suitable for situations where interpretability and computational efficiency are important factors.
+
+#### **Random Forest Classifier:**
+
+Random Forest is another ensemble learning method that combines multiple decision trees to make predictions. Each individual decision tree in the forest is trained on a random subset of the data and features, which helps to prevent overfitting. Random Forest is known for its ability to capture complex relationships in the data and often outperforms other algorithms, especially for medium-sized datasets. It is a versatile algorithm that can handle a wide range of data types and is generally less prone to overfitting compared to individual decision trees.
+
+## W**hy SVC?**
+
+SVC might be the best choice?
+
+Given the complexity of the dataset, with 41 distinct disease classes, SVC stands out as a strong candidate for this task. SVC's ability to handle high-dimensional data and complex, non-linear decision boundaries makes it well-suited for this multiclass classification problem. The built-in mechanisms in SVC to prevent overfitting are crucial when working with a large number of classes, as the risk of overfitting is higher in such scenarios. Additionally, the interpretability and feature importance capabilities of SVC can provide valuable insights into the relative significance of different factors in predicting the 41 diseases, which can be beneficial for both model understanding and feature selection. While the other algorithms mentioned (Gradient Boosting, K-Neighbors, and Random Forest) can also be effective, SVC's versatility and robustness in handling high-dimensional, multiclass problems make it a compelling choice for your disease prediction task.
