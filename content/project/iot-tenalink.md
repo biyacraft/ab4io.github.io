@@ -1,5 +1,5 @@
 ---
-title: IOT-TenaLink
+title: 'IOT Device To Send Real Time Biometrics of Patient to Doctor '
 description: >-
   The device measures the patient's temperature and heart rate, transmitting the
   data to the ThingSpeak cloud. Doctors utilize this data via a website to
