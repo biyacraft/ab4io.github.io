@@ -13,7 +13,7 @@ export default function Footer(){
                     ab4i40
                 </Link>{" "}Blog{" "} {" "}    
                 <Link 
-                href="https://drive.google.com/file/d/10ZnQoXCbRWS5BB0jU8TPq-AWZEBslLij/view?usp=sharing"
+                href="https://drive.google.com/file/d/1NOnIgC77Qa7Srpqh5d3wGp59Gss1JJP3/view?usp=sharing"
                 className="underline-offset-2 hover:text-emerald-500 hover:underline"
                 target="_blank">
                    {" "} Download CV</Link>
