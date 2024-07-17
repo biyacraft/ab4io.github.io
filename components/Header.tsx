@@ -33,7 +33,7 @@ export default function Header(){
                     <RiYoutubeFill />
                 </Link>
                 <Link href='https://www.linkedin.com/in/ayalkbet-tesfahun-7684a8227'>
-                    <RiLinkedinBoxFill />
+                    <RiLinkedinBoxFill /> 
                 </Link>
                 <Link href='https://github.com/ab4io'>
                     <RiGithubFill />
