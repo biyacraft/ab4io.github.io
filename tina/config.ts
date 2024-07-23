@@ -1,3 +1,4 @@
+import { title } from "process";
 import { defineConfig } from "tinacms";
 import { richTextComponents } from "./richtext-schema";
 
@@ -10,8 +11,10 @@ const branch =
 
 export default defineConfig({
   branch,
-  token: process.env.TINA_TOKEN, // This should match the value in your environment variables
-  clientId: process.env.TINA_CLIENT_ID, // This should match the value in your environment variables
+
+ token: process.env.TINA_TOKEN, // This should match the value in your .env file
+clientId: process.env.TINA_PUBLIC_CLIENT_ID, // This should match the value in your .env file
+
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -22,6 +25,7 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
+  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/schema/
   schema: {
     collections: [
       {
@@ -46,21 +50,24 @@ export default defineConfig({
           },
         ],
         ui: {
-          // This is a DEMO router. You can remove this to fit your site
+          // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => {
-            if (document._sys.filename === "home") {
+            if (document._sys.filename==="home"){
               return `/`
             }
-            return undefined;
+            return undefined
           },
           filename: {
-            slugify: (values) => {
-              return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(
-                /[^\w\.\/-\s]/gi,
-                ""
-              );
+            slugify: (values) =>{
+              return `${(values.title || "").
+                toLowerCase().replace(/ /g, "-")}`.
+                replace(
+                  /[^\w\.\/-\s]/gi,
+                  "",
+                )
             },
           },
+          
         },
       },
       {
@@ -96,23 +103,25 @@ export default defineConfig({
             templates: richTextComponents,
           },
         ],
-        defaultItem: () => {
-          return {
-            title: "New Post",
-            date: new Date(),
-          };
+        defaultItem:()=>{
+          return{
+            title:"New Post",
+            date:new Date()
+        }
         },
         ui: {
-          // This is a DEMO router. You can remove this to fit your site
+          // This is an DEMO router. You can remove this to fit your site
           router: ({ document }) => {
-            return `/posts/${document._sys.filename}`;
+            return `/posts/${document._sys.filename}`
           },
           filename: {
-            slugify: (values) => {
-              return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(
-                /[^\w\.\/-\s]/gi,
-                ""
-              );
+            slugify: (values) =>{
+              return `${(values.title || "").
+                toLowerCase().replace(/ /g, "-")}`.
+                replace(
+                  /[^\w\.\/-\s]/gi,
+                  "",
+                )
             },
           },
         },
@@ -138,21 +147,24 @@ export default defineConfig({
           {
             name: "link",
             type: "string",
-            label: "Link",
+            label: "link",
             required: true,
           },
         ],
         ui: {
           filename: {
-            slugify: (values) => {
-              return `${(values.title || "").toLowerCase().replace(/ /g, "-")}`.replace(
-                /[^\w\.\/-\s]/gi,
-                ""
-              );
+            slugify: (values) =>{
+              return `${(values.title || "").
+                toLowerCase().replace(/ /g, "-")}`.
+                replace(
+                  /[^\w\.\/-\s]/gi,
+                  "",
+                )
             },
           },
         },
       },
     ],
   },
-});
+}
+);
