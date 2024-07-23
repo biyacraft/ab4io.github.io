@@ -13,7 +13,7 @@ export default defineConfig({
   branch,
 
  token:  process.env.TINA_TOKEN, // This should match the value in your .env file
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID // This should match the value in your .env file
+  clientId: process.env.TINA_PUBLIC_CLIENT_ID // This should match the value in your .env file
 
   build: {
     outputFolder: "admin",
