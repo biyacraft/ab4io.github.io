@@ -25,10 +25,7 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   try {
     // Fetch a list of slugs from your data source
-    const slugs = await client.queries.post({ relativePath: `${params.slug}.mdx` })
-    .then((result) =>{
-       return result
-      }); // Replace with your actual query to fetch slugs
+    const slugs = await client.queries
 
     // Return an array of objects with `slug` properties
     return slugs.map((slug: string) => ({
@@ -40,7 +37,7 @@ export async function generateStaticParams() {
   }
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const result = await client.queries
     .page({ relativePath: `${params.slug}.mdx` })
     .then((result) => result)
